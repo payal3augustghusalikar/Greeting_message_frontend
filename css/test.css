@@ -1,7 +1,7 @@
 .header {
     overflow: hidden;
     background-color: #f1f1f1;
-    padding: 2px 1px;
+    padding: 20px 10px;
   }
  
   body { 
@@ -12,7 +12,7 @@
   .header {
     overflow: hidden;
     background-color: #f1f1f1;
-    padding: 2px 1px;
+    padding: 20px 10px;
   }
   
   .header a {
@@ -50,9 +50,9 @@
       float: none;
     } 
 
+     
 
-
-    /* for sidebar */
+    /* forsidebar */
     body {font-family: "Lato", sans-serif;}
 
     .sidebar {
