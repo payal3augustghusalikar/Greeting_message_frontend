@@ -4,17 +4,20 @@
     padding: 20px 10px;
   }
  
-  body { 
+  /* body { 
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-  }
+  } */
+
+     
+  body {font-family: "Lato", sans-serif;}
   
-  .header {
+  /* .header {
     overflow: hidden;
     background-color: #f1f1f1;
     padding: 20px 10px;
   }
-  
+   */
   .header a {
     float: left;
     color: black;
@@ -43,91 +46,50 @@
     .header a {
       float: none;
       display: block;
-      text-align: left;
+      text-align: center;
     }
     
     .header-right {
-      float: none;
+      float: none; 
     } 
+  }
 
-     
-
-    /* forsidebar */
-    body {font-family: "Lato", sans-serif;}
-
-    .sidebar {
-      height: 100%;
-      width: 160px;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      padding-top: 16px;
-    }
-    
-    .sidebar a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #818181;
-      display: block;
-    }
-    
-    .sidebar a:hover {
-      color: #f1f1f1;
-    }
-    
-    .main {
-      margin-left: 160px; /* Same as the width of the sidenav */
-      padding: 0px 10px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidebar {padding-top: 15px;}
-      .sidebar a {font-size: 18px;}
-    }
-
-  } 
-
-
-  /* for side bar */
-     
-   
-    body {font-family: "Lato", sans-serif;}
-    
-    .sidebar {
-      height: 100%;
-      width: 160px;
-      position: fixed;
-      z-index: 1;
-      top: 10;
-      left: 0;
-      background-color: rgb(177, 174, 174);
-      overflow-x: hidden;
-      padding-top: 16px;
-    }
-    
-    .sidebar a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 20px;
-      color: #070707;
-      display: block;
-    }
-    
-    .sidebar a:hover {
-      color: #f1f1f1;
-    }
-    
-    .main {
-      margin-left: 160px; /* Same as the width of the sidenav */
-      padding: 0px 10px;
-    }
-    
-    @media screen and (max-height: 450px) {
-      .sidebar {padding-top: 15px;}
-      .sidebar a {font-size: 18px;}
-    }
   
+    
+ /*for side bar  */
+  body {font-family: "Lato", sans-serif;}
+    
+  .sidebar {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 10;
+    left: 0;
+    background-color: rgb(233, 229, 229);
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+  
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #070707;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
