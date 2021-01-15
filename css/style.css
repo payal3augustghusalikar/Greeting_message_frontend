@@ -1,6 +1,4 @@
-/*
- header bar starts
- */
+/* header bar starts */
  .header-bar{
   z-index: 99;
   position: fixed;
@@ -9,12 +7,13 @@
   right: 0;
   display: flex;
   background-color: #dfd9d9;
-;  /* box-shadow: 0 2px 20px rgba(0,0,0,0.6); */
+ box-shadow: 0 2px 10px rgba(0,0,0,0.6); 
+}
 
+.header-bar h3{
+   margin-left: 200px;
 }
-.header-bar h2{
-   margin-left: 235px;
-}
+
 .header-bar ul{
     margin-top: 23px;
     position: absolute;
@@ -25,12 +24,11 @@
     cursor: pointer;
     padding: 6px;
     display: inline;
-
 }
 
 .header-bar li img{
     height: 20px;
-    width:20px;
+    width:23px;
 }
 
 .signin{
@@ -38,18 +36,17 @@
     position: absolute;
     bottom: 0;
     top: 10;
-
 }
+
 .signup{
   position: absolute;
-   left: 480px; 
- 
+  left: 490px; 
   bottom: 0px;
   background-color: blue;
   color: rgb(5, 224, 253);
   border-radius: 25px;
-
 }
+
 .signup:hover {
   color: rgb(21, 199, 140);
   background-color: #251155;
@@ -64,13 +61,14 @@
    width: 160px;
    position: fixed;
    z-index: 1;
-   top:20;
+   top:30;
    left: 0;
    background-color: rgb(233, 229, 229);
    overflow-x: hidden;
-   padding-top: 16px;
+   padding-top: 40px;
    height: 100%;
    width: 160px;
+   box-shadow: 0 2px 10px rgba(0,0,0,0.6); 
  }
 
  .sidebar a {
@@ -99,3 +97,32 @@
   height: 20px;
   width:20px;
 }
+
+.layout h2{
+  margin-left: 200px;
+  padding-top: 60px;
+  padding-left: 25px;
+}
+/* side bar ends */
+
+/* basic layout greetings starts */
+.boxed{
+width: 200px;
+height: 150px;
+box-shadow: 2px 2px 20px rgba(105, 105, 105, 0.6);
+font-size: 16px;
+margin-left: 200px;
+padding-top: 10px;
+padding-left: 25px;
+}
+
+.boxed p1{
+  font-size: 12px;
+  font-weight: normal;
+}
+ 
+.layout li {
+  cursor: pointer;
+  display: inline-table;
+}
+/* basic panel layout greetings ends */
