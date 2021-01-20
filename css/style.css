@@ -21,14 +21,6 @@
   }
 }  
 
-
-/* Responsive layout - makes a one column-layout instead of a two-column layout */
-/* @media (max-width: 800px) {
-  .flex-item-right, .flex-item-left {
-    flex: 100%;
-  }
-} */
-
 /* header bar starts */
  .header-bar{
   z-index: 99;
@@ -67,8 +59,6 @@
     height: 20px;
     width:23px;
 }
-
-
 
 .signin{
     color: rgb(10, 176, 241);
@@ -145,33 +135,12 @@
   padding-top: 50px;
 }
 
-/* basic layout greetings starts */
-/* .boxed{
-width: 180px;
-height: 150px;
-box-shadow: 2px 2px 10px rgba(105, 105, 105, 0.6);
-font-size: 16px;
-margin-left: 200px;
-padding-top: 10px;
-padding-top: 10px;
-padding-left: 30px;
-} */
-
 .boxed p1{
   font-size: 14px;
   font-weight: normal;
   padding-left: 1px;
 }
- 
-.layout li {
-  cursor: pointer;
-display: inline-table;
-scroll-padding-inline: 10px;
-padding-top: 40px;
-padding-bottom: 1px;
 
-grid-template-columns: 1px 1px 1px 1px ;
-}
 .card-greeting { 
  margin-bottom: 10rem;
 padding-top: 100px;
@@ -183,16 +152,6 @@ height: 500px;
 margin: 1px;
 }
 
-/*  
-.layout {
-  cursor: pointer;
-display: inline-table;
-padding-top: 10px;
-padding-bottom: 1px;
-padding-right: 10px;
-grid-template-columns: 1px 1px 1px 1px ;
-} */
-
 .user{
   background-color:white;
   display: inline-block;
@@ -201,23 +160,7 @@ grid-template-columns: 1px 1px 1px 1px ;
   padding: 10px 10px 10px 10px;
   margin: 12px 20px 19px 14px;
   box-shadow:5px 10px 10px 10px rgb(211, 209, 209);
-  font-size: 12px;
-  
+  font-size: 12px; 
 }
-
-
-/* panels */
-.panels-container{
-  padding: 0px 0px 0px 100px;
-  margin: -1150px -13px -23px 210px;
-}
-.panels{
-  background-color:white;
-  height: 500px;
-  padding: 8px 8px 8px 8px;
-  margin: 0px 50px 0px 0px ;
-  overflow: scroll;
-}
-
 
 /* basic panel layout greetings ends */

@@ -1,90 +1,41 @@
 const url = 'http://localhost:3000/greetings';
 console.log(typeof(url));
-// async function getData(){
-//   const response = await fetch('http://localhost:2000/greetings');
-//   const json = await response.json();
-//   console.log(json);
 
 const url1='http://dummy.restapiexample.com/api/v1/employees'
 console.log(typeof(url1));
 
-// getData = () => {
-//   fetch('https://reqres.in/api/users?page=2')
-//     .then((response) => {
-//       if(!response.ok) {
-//         throw Error('ERROR')
-//       }
-//      return response.json();
-//     })
-//     .then((data) => {
-//       console.log(data.data);
-//       const html = data.data
-//         .map(greeting => {
-//           return `
-//           <div class="user">
-//           <p>id: ${greeting.id}</p>
-//           <p>Name: ${greeting.first_name}</p>
-//           <p>Message: ${greeting.last_name}</p>
-//           </div>
-//           `;
-//         })
-//         .join("");
-//       console.log(html);
-//       document.querySelector("#app").insertAdjacentHTML("afterbegin", html);
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     })
-// }
+getData = () => {
+  fetch('https://reqres.in/api/users?page=2')
+    .then((response) => {
+      if(!response.ok) {
+        throw Error('ERROR')
+      }
+     return response.json();
+    })
+    .then((data) => {
+      console.log(data.data);
+      const html = data.data
+        .map(greeting => {
+          return `
+          <div class="user">
+          <p>id: ${greeting.id}</p>
+          <p>Name: ${greeting.first_name}</p>
+          <p>Message: ${greeting.last_name}</p>
+          </div>
+          `;
+        })
+        .join("");
+      console.log(html);
+      document.querySelector("#app").insertAdjacentHTML("afterbegin", html);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+}
 
-// addEventListener("click", getData());
-
-// getAllGreetings = () => {
-//   url = 'http://localhost:2000/greetings'
-//   // fetch(url, { mode: 'no-cors' }).then((response) => {
-//     fetch(url).then((response) => {
-//       return response.json();
-//   }).then((greetingData) => {
-//       const html = greetingData.data.map(greeting => {
-//           return `<div class="greeting-element">
-//           <pre>GreetingId:${greeting._id}</pre>
-//           <pre>Name:${greeting.name}</pre>
-//           <pre>Message:${greeting.message}</pre>
-//           <pre>Created At:${greeting.createdAt}</pre>
-//          </div>`
-//       })
-//       document.querySelector("#app").insertAdjacentHTML("afterbegin", html);
-//   }).catch((err) => console.log("Can’t access " + url));
-// }
-
-// getAllGreetings();
+addEventListener("click", getData());
 
 
-
-//       console.log(data);
-
-//       data.forEach((element) => {
-//         const columnElement = document.createElement("div");
-//         columnElement.classList.add("column");
-//         const cardElement = document.createElement("div");
-//         cardElement.classList.add("card");
-//         columnElement.appendChild(cardElement);
-//         const cardGreetingElement = document.createElement("div");
-//         cardGreetingElement.classList.add("card-greeting");
-//         cardElement.appendChild(cardGreetingElement);
-//         const figureElement = document.createElement("figure");
-//         //cardGreetingElement.appendChild(figureElement);
-//         const greetingElement = document.createElement("img");
-//         greetingElement.src = element;
-//         figureElement.appendChild(greetingElement);
-//         randomElement.appendChild(columnElement);
-//       }).catch((error) => {
-//         consol.log(error);
-//       })
-//     })
-// }
-
-// addEventListener("click", getData());
 
 // add greeting
 // addGreeting = () => {
