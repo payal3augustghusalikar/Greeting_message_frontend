@@ -3,17 +3,20 @@
   <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Greeting mssage app</title>
+    <script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
-    <div class="modal"></div>
+
+
+
     <div class="header-bar">
         <h3>Greetings App</h3>
         <ul>
-            <li><img src="./assets/notification_icon3.png"> <select name="notification">    
+            <li><img id="a" src="./assets/notification_icon3.png"> <select name="notification">    
             </select> </i> </li>
-            <li> <img src="./assets/mail_icon3.png">  mail</li>
-            <li><img src="./assets/support_icon1.png">  Support</li>
-            <li>  <img src="./assets/tool_icon3.png"> tools 
+            <li><img id="b" src="./assets/mail_icon3.png"> mail</li>
+            <li><img id="c" src="./assets/support_icon1.png"> support</li>
+            <li><img id="d" src="./assets/tool_icon3.png"> tools 
               <select name="Tools"> 
                 <!-- optgroup to gruop similar things -->
            <optgroup label="Tools">
@@ -31,25 +34,51 @@
             <li class="signup">SignUp</li>
         </ul>
     </div>
-  </div>   
-      <div class="sidebar">
-    
-      <a><img src="assets/list_icon3.png"> list </a>
-      <a> <img src="assets/add_icon3.png"  > add</a>
-      <a> <img src="assets/edit_icon3.png"  > edit</a>
-      <a><img src="assets/delete_icon3.png"  > delete</a>
-      </div>
-<!-- basic panel layout -->
-<div class="layout">
-  <h2 >
-    Basic Panels Layout
+  </div>  
+</div> 
+ 
+ <!-- <a><img src="assets/list_icon3.png"> list </a>  -->
+
+      <!-- <a><img src="assets/list_icon3.png"> <button onclick="getData()">list</button> </a>
+      <a><button class="openButton" onclick="openForm()"><img src="assets/add_icon3.png" -->
+        <!-- class="side-bar-images"></button> add</a> -->
+      
+        <div class="sidebar">
+        <a ><img src="assets/list_icon3.png"> <button onclick="getData()">list</button> </a>
+        <a><img src="assets/add_icon3.png"> add</a>
+        <a><img src="assets/edit_icon3.png"> edit</a>
+        <a><img src="assets/delete_icon3.png"> delete</a>
+      </div> 
+ 
+ <div class="layout">
+  <h2>
+    Basic Panels Layout 
   </h2>
 
-<ul>
+ <div class="card-greeting"> 
+  <div id="app"></div>
+ </div> 
+ </div>
+
+ <div class="panels-container">
+  <h3>Basic panels layout</h3>
+  <div id="panels">
+  <div class="panels">
+    <div id="app"></div>
+  </div>
+</div>
+</div>
+</div> 
+</body>
+
+
+
+<!--  
+<div class="modal"></div>
+ <ul>
      <li>
       <div class="boxed">
-        <div>
-          <p> ObjectId("1111111111")</p>
+        <div>      
           <h5>
             Hello1 <p1> (Greeting) </p1>
             <br>
@@ -61,8 +90,7 @@
      </li>
       <li>
        <div class="boxed">
-         <div>
-           <p> ObjectId("1111111111")</p>
+         <div>        
            <h5>
              Hello2 <p1> (Greeting) </p1>
              <br>
@@ -74,8 +102,7 @@
       </li>
     <li>
        <div class="boxed">
-         <div>
-           <p> ObjectId("1111111111")</p>
+         <div>        
            <h5>
              Hello3 <p1> (Greeting) </p1>
              <br>
@@ -85,12 +112,13 @@
          </div>
        </div> 
       </li>
-    </ul>  
+
+
+   </ul>  
 <ul>  
   <li>
    <div class="boxed">
      <div>
-       <p> ObjectId("1111111111")</p>
        <h5>
          Hello4 <p1> (Greeting) </p1>
          <br>
@@ -103,7 +131,6 @@
    <li>
     <div class="boxed">
       <div>
-        <p> ObjectId("1111111111")</p>
         <h5>
           Hello5 <p1> (Greeting) </p1>
           <br>
@@ -116,8 +143,7 @@
  <li>
     <div class="boxed">
       <div>
-        <p> ObjectId("1111111111")</p>
-        <h5>
+          <h5>
           Hello6 <p1> (Greeting) </p1>
           <br>
          Milan6 <p1> (name) </p1>
@@ -126,12 +152,11 @@
       </div>
     </div> 
    </li>
- </ul>
-<ul>  
+  </ul>
+<ul>   
   <li>
    <div class="boxed">
      <div>
-       <p> ObjectId("1111111111")</p>
        <h5>
          Hello7 <p1> (Greeting) </p1>
          <br>
@@ -144,7 +169,6 @@
    <li>
     <div class="boxed">
       <div>
-        <p> ObjectId("1111111111")</p>
         <h5>
           Hello8 <p1> (Greeting) </p1>
           <br>
@@ -157,7 +181,6 @@
  <li>
     <div class="boxed">
       <div>
-        <p> ObjectId("1111111111")</p>
         <h5>
           Hello9 <p1> (Greeting) </p1>
           <br>
@@ -166,7 +189,15 @@
         <p3> 15 min ago</p3>
       </div>
     </div> 
-   </li>
+   </li>  
  </ul>
-</body>
+</div>  -->
+
+
+
+
+
+</body> 
 </html>
+
+  
