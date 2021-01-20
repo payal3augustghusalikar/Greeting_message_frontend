@@ -129,7 +129,6 @@
 
 .layout h2{
   margin-left: 150px;
-
   padding-left: 55px;
   position: fixed;
   padding-top: 50px;
@@ -140,17 +139,35 @@
   font-weight: normal;
   padding-left: 1px;
 }
+ 
+.layout li {
+  cursor: pointer;
+display: inline-table;
+scroll-padding-inline: 10px;
+padding-top: 40px;
+padding-bottom: 1px;
+grid-template-columns: 1px 1px 1px 1px ;
+}
 
 .card-greeting { 
  margin-bottom: 10rem;
-padding-top: 100px;
+padding-top: 150px;
 padding-right: 30px;
-padding-left: 400px;
+padding-left: 300px;
 padding-right: 100px;
 background-color:rgb(252, 247, 247);
 height: 500px;
 margin: 1px;
 }
+
+.layout {
+cursor: pointer;
+display: inline-table;
+padding-top: 10px;
+padding-bottom: 1px;
+padding-right: 10px;
+grid-template-columns: 1px 1px 1px 1px ;
+} 
 
 .user{
   background-color:white;
@@ -160,7 +177,9 @@ margin: 1px;
   padding: 10px 10px 10px 10px;
   margin: 12px 20px 19px 14px;
   box-shadow:5px 10px 10px 10px rgb(211, 209, 209);
-  font-size: 12px; 
+  font-size: 12px;
 }
+
+
 
 /* basic panel layout greetings ends */
