@@ -1,21 +1,23 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+
+<head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Greeting mssage app</title>
-    <script type="text/javascript" src="./index.js"></script>
+
 </head>
+
 <body>
 
     <div class="header-bar">
         <h3>Greetings App</h3>
         <ul>
-            <li><img id="a" src="./assets/notification_icon3.png"> <select name="notification">    
-            </select> </i> </li>
+            <li><img id="a" src="./assets/notification_icon3.png"></li>
             <li><img id="b" src="./assets/mail_icon3.png"> mail</li>
             <li><img id="c" src="./assets/support_icon1.png"> support</li>
-            <li><img id="d" src="./assets/tool_icon3.png"> tools 
-              <select name="Tools"> 
+            <li><img id="d" src="./assets/tool_icon3.png"> tools
+                <select name="Tools"> 
                 <!-- optgroup to gruop similar things -->
            <optgroup label="Tools">
                   <option value="tool">tool1</option>            
@@ -32,23 +34,68 @@
             <li class="signup">SignUp</li>
         </ul>
     </div>
-  </div>
-        <div class="sidebar">
-        <a ><img src="assets/list_icon3.png"> <button onclick="getData()">list</button> </a>
-        <a><img src="assets/add_icon3.png"> add</a>
-        <a><img src="assets/edit_icon3.png"> edit</a>
-        <a><img src="assets/delete_icon3.png"> delete</a>
-      </div> 
-      
- <div class="layout">
-  <h2>
-    Basic Panels Layout 
-  </h2>
- <div class="card-greeting"> 
-  <div id="app"></div>
- </div> 
- </div>
-</body>
-</html>
+    </div>
+    <div class="sidebar">
+        <nav>
+            <div>
+                <a><img src="assets/list_icon3.png" class="openAllButton" onclick="getData()"> list</a>
+                <a><img src="assets/add_icon3.png" class="openButton" onclick="openForm()"> add </a>
+                <!-- <a href="#" id="button" class="button"> Click me <img src="assets/add_icon3.png"></a> -->
+                <a><img src="assets/edit_icon3.png"> edit </a>
+                <a><img src="assets/delete_icon3.png"> delete </a>
+            </div>
+        </nav>
+    </div>
 
-  
+
+    </div>
+    <div class="greetPopup">
+        <div class="formPopup">
+            <form class="formContainer" id="addpost" autocomplete="off">
+                <h2>Add Here</h2>
+                <label class="firstName">First Name</label>
+                <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
+                <label class="lastName">Last Name</label>
+                <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
+                <button type="submit" class="btn">submit</button>
+                <button class="btncancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="greetPopup">
+        <div class="formPopup">
+            <form class="formContainer" id="addpost" autocomplete="off">
+                <h2>Please Enter Details </h2>
+                <label for="firstName">
+                    First Name
+                </label>
+                <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
+                <button type="submit" class="btn">submit</button>
+                <button class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <layout>
+        <h2>Basic Panels Layout</h2>
+        <div class="cardgreeting">
+            <div id="app"></div>
+        </div>
+        </div>
+
+    </layout>
+
+    <script type="text/javascript" src="index.js">
+    </script>
+</body>
+
+</html>
