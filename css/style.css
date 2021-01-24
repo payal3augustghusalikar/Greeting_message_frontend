@@ -298,7 +298,7 @@ label {
 }
 
 .formContainer {
-    max-width: 200px;
+    max-width: 400px;
     padding: 20px;
     background-color: #fff;
 }
@@ -311,13 +311,11 @@ label {
     background: rgb(190, 188, 188);
 }
 
-
-/* 
 .formContainer input[type="text"]:focus,
 .formContainer input[type="text"]:focus {
     background-color: #ddd;
     outline: none;
-} */
+}
 
 .formContainer .btn {
     padding: 12px 20px;
@@ -338,13 +336,11 @@ label {
     opacity: 1;
 }
 
-
-/* 
 .formContainer .btn:hover,
 .openButton:hover,
 .openAllButton:hover {
     opacity: 0.5;
-} */
+}
 
 
 /* for delete */
@@ -440,3 +436,23 @@ user .deleteOnCards {
     left: 0;
     right: 0;
 } */
+
+
+/* edit form popup */
+
+.formPopup,
+.formPopups {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 20%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+
+.formContainer {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #fff;
+}
