@@ -416,6 +416,8 @@ user .deleteOnCards {
 *Styling for making bg blur
 */
 
+
+/* 
 .modal {
     display: block;
     z-index: 100;
@@ -437,4 +439,4 @@ user .deleteOnCards {
     top: 35%;
     left: 0;
     right: 0;
-}
+} */
