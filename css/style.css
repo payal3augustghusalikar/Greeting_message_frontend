@@ -417,7 +417,7 @@ user .deleteOnCards {
 */
 
 .modal {
-    display: none;
+    display: block;
     z-index: 100;
     background-color: black;
     position: fixed;
