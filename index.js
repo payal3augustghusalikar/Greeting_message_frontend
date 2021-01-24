@@ -202,28 +202,6 @@ closeDeletePopup = () => {
     document.querySelector(".deleteBoxConformation").style.display = "none";
 };
 
-
-
-
-// deleteGreeting = (id) => {
-//     if (id == 'undefined') {
-//         alert('Id cant be undefined')
-//         closeDeletePopup()
-//         getData();
-//     } else {
-//         let parameters = {
-//             method: 'DELETE'
-//         }
-//         fetch(`${URL}${id}`, parameters)
-//             .then(() => {
-//                 alert("Greeting deleted Successfully")
-//                 closeDeletePopup()
-//                 getData();
-//             })
-//             .catch(() => alert("Error occcured while updating greeting try again..!!"))
-//     }
-// };
-
 deletePopup = (id) => {
     output = `
     <div class="deleteBoxConformation">
