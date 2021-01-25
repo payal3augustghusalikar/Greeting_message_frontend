@@ -289,11 +289,12 @@ label {
     text-align: center;
 } */
 
-.formContainer {
+
+/* .formContainer {
     max-width: 200px;
     padding: 20px;
     background-color: #fff;
-}
+} */
 
 .formContainer input {
     width: 90%;
@@ -312,7 +313,7 @@ label {
 .formContainer .btn {
     padding: 12px 20px;
     border: none;
-    background-color: #7838df;
+    background-color: #04830e;
     color: rgb(162, 237, 250);
     cursor: pointer;
     width: 50%;
@@ -376,9 +377,7 @@ label {
     background-color: #cc000036;
 } */
 
-.formContainer .btn:hover,
-.openButton:hover,
-.openAllButton:hover {
+.formContainer .btn:hover {
     opacity: 0.5;
 }
 
@@ -405,7 +404,8 @@ user .deleteOnCards {
     bottom: 25%;
 }
 
-.deleteBoxConformation {
+
+/* .deleteBoxConformation {
     display: none;
     position: fixed;
     left: 45%;
@@ -414,14 +414,15 @@ user .deleteOnCards {
     z-index: 9;
     text-align: center;
     background-color: brown;
-}
+} */
 
 
 /*
 *Styling for delete pop-up
 */
 
-.deleteBoxConformation {
+
+/* .deleteBoxConformation {
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
     padding: 15px;
@@ -435,16 +436,14 @@ user .deleteOnCards {
     font-size: 20px;
     text-align: center;
     font-weight: 20px;
-}
+} */
 
 .delete-button1 {
-    margin-left: 5%;
-    padding: 10px;
+    justify-items: left;
 }
 
 .delete-button2 {
-    margin-left: 50%;
-    padding: 10px;
+    justify-items: right;
 }
 
 
@@ -500,6 +499,7 @@ user .deleteOnCards {
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .formContainer {
@@ -528,3 +528,62 @@ body:before {
     -webkit-filter: blur(10px);
     -moz-filter: blur(10pox);
 } */
+
+
+/* for delet */
+
+.delete-form-popup {
+    width: 100%;
+    height: 200%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.formContainer1 {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    justify-self: right;
+    justify-content: center;
+    justify-items: left
+}
+
+.formContainer1 .btn {
+    border: none;
+    background-color: #04830e;
+    cursor: pointer;
+    width: 50%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    padding-right: 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.formContainer1 .cancel {
+    background-color: #f82424;
+    opacity: 1;
+    justify-items: center;
+}
+
+.formContainer1 .btn:hover {
+    opacity: 0.5;
+}
+
+
+/* padding: 12px 20px;
+border: none;
+background-color: #7838df;
+color: rgb(162, 237, 250);
+cursor: pointer;
+width: 50%;
+margin-bottom: 15px;
+opacity: 0.8;
+padding-right: 20px;
+border-radius: 20px; */

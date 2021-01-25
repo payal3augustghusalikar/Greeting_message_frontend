@@ -1,7 +1,7 @@
 const URL = "http://localhost:2000/greetings";
 
 /**
- *  function to fetch all greetings 
+ *  function to fetch all greetings
  */
 getData = () => {
     fetch(URL)
@@ -21,8 +21,10 @@ getData = () => {
           <p>${greeting.name}</p>
           <p>${greeting.message}</p>
           <pre>${greeting.createdAt.substring(0, 10)}</pre>   
-          <div class='editOnCards'><img src="./assets/edit_icon3.png" onclick="openFormToEdit('${greeting}')"></div>
-          <div class='deleteOnCards'><img src="./assets/delete_icon3.png" onclick="deletePopup('${
+          <div class='editOnCards'><img src="./assets/edit_icon3.png" onclick="openFormToEdit('${
+            greeting._id
+          }')"></div>
+          <div class='deleteOnCards'><img src="./assets/delete_icon3.png" onclick="deleteGreetingPopup('${
             greeting._id
           }')"></div>
           </div>`;
@@ -33,7 +35,7 @@ getData = () => {
         .catch((error) => {
             console.log(error);
         });
-}; {}
+};
 
 //to load the all grettings
 addEventListener("click", getData());
@@ -96,7 +98,6 @@ addEventListener("click", getData());
 //                 return err;
 //             });
 //         closeForm();
-
 //     }
 // }
 
@@ -141,8 +142,7 @@ function addGreeting(greeting) {
                 lastNameError.innerHTML = lastNameMessage.join(", ");
         });
         getData();
-    } else
-        add(firstName, lastName);
+    } else add(firstName, lastName);
 }
 
 /**
@@ -184,44 +184,107 @@ function closeForm() {
 //use to add the data on submit
 document.getElementById("addpost").addEventListener("submit", addGreeting);
 
-// working codeof delete greting withoout shoeing popup
-deleteGreeting = (id) => {
-    if (id == "undefined") {
-        alert("Id cant be undefined");
-        closeDeletePopup();
-        getData();
-    } else {
-        fetch(`${URL}/${id}`, { method: "DELETE" })
-            .then(() => {
-                alert("Greeting deleted Successfully");
-                closeDeletePopup();
-                getData();
-            })
-            .catch(() =>
-                alert("Error occcured while updating greeting try again..!!")
-            );
-        document.querySelector(".deleteBoxConformation").style.display = "none";
-    }
+// // working codeof delete greting withoout shoeing popup
+// deleteGreeting = (id) => {
+//     if (id == "undefined") {
+//         alert("Id cant be undefined");
+//         closeDeletePopup();
+//         getData();
+//     } else {
+//         fetch(`${URL}/${id}`, { method: "DELETE" })
+//             .then(() => {
+//                 alert("Greeting deleted Successfully");
+//                 closeDeletePopup();
+//                 getData();
+//             })
+//             .catch(() =>
+//                 alert("Error occcured while updating greeting try again..!!")
+//             );
+//         document.querySelector(".deleteBoxConformation").style.display = "none";
+//     }
+// };
+
+// /**
+//  * delete the popup
+//  * @param{id}
+//  */
+// deletePopup = (id) => {
+//     document.querySelector(".deleteBoxConformation").style.display = "block";
+//     document
+//         .getElementById("deletePost")
+//         .addEventListener("submit", deleteGreeting(id));
+//     document
+//         .querySelector("delete")
+//         .addEventListener("delete", deleteGreeting(id));
+// };
+
+deleteGreetingPopup = (id) => {
+    document.querySelector(".delete-form-popup").style.display = "flex";
+    document.getElementById("deleteRecord").addEventListener("click", () => {
+        deleteGreeting(id);
+    });
 };
 
-/**
- * delete the popup
- * @param{id}
- */
-deletePopup = (id) => {
-    document.querySelector(".deleteBoxConformation").style.display = "block";
-    document
-        .getElementById("deletePost")
-        .addEventListener("submit", deleteGreeting(id));
-    document
-        .querySelector("delete")
-        .addEventListener("delete", deleteGreeting(id));
+// closeDeletePopup = () => {
+//     document.querySelector('.delete-form-popup').style.display = 'none';
+
+// }
+
+
+document.getElementById("closeDeleteGreetingForm").addEventListener('click', () => {
+    document.querySelector('.delete-form-popup').style.display = 'none';
+})
+
+
+// deletePopup = (id) => {
+//     document.querySelector(".deleteBoxConformation").style.display = "flex";
+//     document
+//         .getElementById("deleteRecord")
+//         .addEventListener("click", deleteGreeting(id));
+//     // document
+//     //     .querySelector("delete")
+//     //     .addEventListener("delete", deleteGreeting(id));
+// };
+
+deleteGreeting = (greetingId) => {
+    let id = greetingId;
+    url = `${URL}/${id}`;
+    fetch(url, { method: "DELETE" })
+        .then(() => {
+            alert("Greeting deleted Successfully");
+            closeDeletePopup();
+
+        })
+        .catch(() => alert("Error occcured while deleting greeting try again..!!"));
 };
+
+// deleteGreeting = (id) => {
+//     if (id == "undefined") {
+//         alert("Id cant be undefined");
+//         closeDeletePopup();
+//         getData();
+//     } else {
+//         fetch(`${URL}/${id}`, { method: "DELETE" })
+//             .then(() => {
+//                 alert("Greeting deleted Successfully");
+//                 closeDeletePopup();
+//                 getData();
+//             })
+//             .catch(() =>
+//                 alert("Error occcured while updating greeting try again..!!")
+//             );
+//         document.querySelector(".deleteBoxConformation").style.display = "none";
+//     }
+// };
 
 //use to close the popup
 closeDeletePopup = () => {
-    document.querySelector(".deleteBoxConformation").style.display = "none";
+    document.querySelector("delete-form-popup").style.display = "none";
 };
+
+
+
+
 
 /**
  * @description: edit the existing greeting in the api using id
