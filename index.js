@@ -61,13 +61,9 @@ function addGreeting(greeting) {
             let firstNameMessage = [];
             let lastNameMessage = [];
             if (firstName.length < 3) {
-                document.querySelector(".firstNameError").style.cssText +=
-                    "color: #d02525";
                 firstNameMessage.push("first name should be greater than 3 char");
             }
             if (!validFormInputs(firstName)) {
-                document.querySelector(".firstNameError").style.cssText +=
-                    "color: #d02525";
                 firstNameMessage.push("first name should not contain number");
             }
             if (lastName.length < 3) {
@@ -210,15 +206,29 @@ edit = (firstName, lastName, id) => {
                 message: lastName,
             }),
         })
-        .then((response) => {
-            response.json();
-            if (response.ok) {
-                alert("successfully edited");
-            }
-        })
-        .catch((err) => {
-            return err;
-        });
+        // .then((response) => {
+        //     response.json();
+        //     if (response.ok) {
+        //         alert("successfully edited");
+        //     }
+        // })
+        // .catch((err) => {
+        //     return err;
+        // });
+
+
+    .then((response) => {
+        console.log(response)
+        return response.json();
+    }).then((greetingData) => {
+        console.log(greetingData);
+        if (response.ok) {
+            alert("successfully edited");
+        }
+
+    }).catch((err) => {
+        console.log(err);
+    })
     closeEditForm();
 };
 

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -8,32 +7,34 @@
 </head>
 
 <body>
-
-
     <div class="modal"> </div>
     <div class="header-bar">
-
         <h3>Greetings App</h3>
         <ul>
             <li><img id="a" src="./assets/notification_icon3.png"></li>
-            <li><img id="b" src="./assets/mail_icon3.png"> mail</li>
-            <li><img id="c" src="./assets/support_icon1.png"> support</li>
+            <li><img id="b" src="./assets/mail_icon3.png"></li>
+            <li><img id="c" src="./assets/support_icon1.png">Support</li>
+            <!-- <li id="e">Support</li> -->
             <li><img id="d" src="./assets/tool_icon3.png"> tools
                 <select name="Tools"> 
                 <!-- optgroup to gruop similar things -->
-           <optgroup label="Tools">
-                  <option value="tool">tool1</option>            
-                  <option value="tool" >tool2</option>
-                  <option value="tool">tool3</option>
-                </optgroup ></label>
-                <optgroup label="games">
-                  <option value="tool">tool4</option>
-                  <option value="tool">tool5</option>
+                <optgroup label="Tools">
+                    <option value="Tool">Tool</option>
+                    <option value="tool">tool2</option>
+                    <option value="tool">tool3</option>
                 </optgroup>
-              </select> </i>
+                </label>
+                <optgroup label="tool">
+                    <option value="tool">tool4</option>
+                    <option value="tool">tool5</option>
+                </optgroup>
+                </select>
+                </i>
             </li>
-            <li class="signin">SignIn</li>
-            <li class="signup">SignUp</li>
+
+            <li class="sign-in">SignIn</li>
+            <li class="sign-up">SIGNUP</li>
+
         </ul>
     </div>
     </div>
@@ -48,9 +49,7 @@
             </div>
         </nav>
     </div>
-
     </div>
-
     <div class="greetPopup">
         <div class="formPopup">
             <form class="formContainer" id="addpost" autocomplete="off">
@@ -109,7 +108,7 @@
                 </label>
                 <div class="lastNameEror"></div>
                 <input type="text" class="lastNameEdit" placeholder="Your last name" name="lastName" required>
-                <button type="submit" class="btn1" onclick="editGreetings()">submit</button>
+                <button type="submit" class="btn" onclick="editGreetings()">submit</button>
                 <button class="btn1 cancel" onclick="closeEditForm()">Close</button>
             </form>
         </div>
