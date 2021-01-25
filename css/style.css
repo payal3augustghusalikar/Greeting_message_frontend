@@ -1,21 +1,3 @@
-.content {
-    float: left;
-    border: 1px solid red;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    width: 190px;
-    padding-left: 10px;
-}
-
-.content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 30px;
-    text-align: center;
-}
-
-
 /* Responsive layout - makes a one column layout */
 
 @media (max-width: 400px) {
@@ -148,17 +130,6 @@
     top: 10;
     left: 200px;
 }
-
-
-/* 
-.signup {
-    position: absolute;
-   
-    bottom: 0px;
-    background-color: blue;
-    color: rgb(5, 224, 253);
-    border-radius: 25px;
-} */
 
 .signup:hover {
     color: rgb(21, 199, 140);
@@ -427,25 +398,6 @@ label {
     text-align: center;
 }
 
-
-/* 
-.formPopup {
-    display: none;
-    position: fixed;
-    left: 45%;
-    top: 5%;
-    border: 3px solid #999999;
-    z-index: 9;
-    text-align: center;
-} */
-
-
-/* .formContainer {
-    max-width: 200px;
-    padding: 20px;
-    background-color: #fff;
-} */
-
 .formContainer input {
     width: 90%;
     padding: 15px;
@@ -515,25 +467,6 @@ label {
     font-size: 13px;
 }
 
-
-/* 
-.formContainer .btn {
-    padding: 12px 20px;
-    border: none;
-    background-color: #8ebf42;
-    color: #fff;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 15px;
-    opacity: 0.8;
-} */
-
-
-/* 
-.formContainer .cancel {
-    background-color: #cc000036;
-} */
-
 .formContainer .btn:hover {
     opacity: 0.5;
 }
@@ -561,92 +494,6 @@ user .deleteOnCards {
     bottom: 25%;
 }
 
-
-/* .deleteBoxConformation {
-    display: none;
-    position: fixed;
-    left: 45%;
-    top: 50%;
-    border: 3px solid #f50505;
-    z-index: 9;
-    text-align: center;
-    background-color: brown;
-} */
-
-
-/*
-*Styling for delete pop-up
-*/
-
-
-/* .deleteBoxConformation {
-    background-color: rgba(0, 0, 0, .5);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    width: 350px;
-    font-size: 15px;
-    border-radius: 10px;
-}
-
-.deleteBoxConformation p {
-    color: rgb(246, 245, 250);
-    font-size: 20px;
-    text-align: center;
-    font-weight: 20px;
-} */
-
-.delete-button1 {
-    justify-items: left;
-}
-
-.delete-button2 {
-    justify-items: right;
-}
-
-
-/*
-*Styling for making bg blur
-*/
-
-
-/* 
-.modal {
-    display: block;
-    z-index: 100;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.8;
-}
-
-.modal-content {
-    display: none;
-    justify-content: center;
-    z-index: 150;
-    position: fixed;
-    margin: auto;
-    top: 35%;
-    left: 0;
-    right: 0;
-}
-
-.modal-content {
-    display: none;
-    width: 250px;
-    height: 200px;
-    background-color: white;
-    border-radius: 4px;
-    text-align: center;
-    padding: 40px;
-    position: relative;
-} */
-
-
-/* edit form popup */
-
 .formPopup,
 .formPopups {
     display: none;
@@ -666,27 +513,6 @@ user .deleteOnCards {
 }
 
 
-/* body {
-    margin: 0;
-    padding: 0;
-}
-
-body:before {
-    content: '';
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: grey;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    background-size: cover;
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10pox);
-} */
-
-
 /* for delet */
 
 .delete-form-popup {
@@ -694,8 +520,9 @@ body:before {
     height: 200%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
-    top: 0;
+    top: 10%;
     display: flex;
+    padding-top: 10px;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
@@ -704,7 +531,7 @@ body:before {
 
 .formContainer1 {
     max-width: 300px;
-    padding: 20px;
+    padding-top: 20px;
     background-color: #fff;
     justify-self: right;
     justify-content: center;
@@ -732,15 +559,3 @@ body:before {
 .formContainer1 .btn:hover {
     opacity: 0.5;
 }
-
-
-/* padding: 12px 20px;
-border: none;
-background-color: #7838df;
-color: rgb(162, 237, 250);
-cursor: pointer;
-width: 50%;
-margin-bottom: 15px;
-opacity: 0.8;
-padding-right: 20px;
-border-radius: 20px; */

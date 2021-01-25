@@ -40,13 +40,12 @@ getData = () => {
 //to load the all grettings
 addEventListener("click", getData());
 
-
 /**
  * vallidate the user input and calls add function
  * @param {*} greeting
  */
-function addGreeting(greeting) {
-    greeting.preventDefault();
+function addGreeting() {
+    // greeting.preventDefault();
     let firstName = document.querySelector(".firstName").value;
     let lastName = document.querySelector(".lastName").value;
     let form = document.querySelector(".formPopup");
@@ -100,6 +99,7 @@ add = (firstName, lastName) => {
         .then((response) => {
             response.json();
             alert("Greeting successfully added");
+            location.reload();
         })
         .catch((err) => {
             return err;
@@ -120,19 +120,12 @@ function closeForm() {
 //use to add the data on submit
 document.getElementById("addpost").addEventListener("submit", addGreeting);
 
-
-
 deleteGreetingPopup = (id) => {
     document.querySelector(".delete-form-popup").style.display = "flex";
     document.getElementById("deleteRecord").addEventListener("click", () => {
         deleteGreeting(id);
     });
 };
-
-// closeDeletePopup = () => {
-//     document.querySelector('.delete-form-popup').style.display = 'none';
-
-// }
 
 
 document.getElementById("closeDeleteGreetingForm").addEventListener('click', () => {
@@ -144,11 +137,19 @@ deleteGreeting = (greetingId) => {
     let id = greetingId;
     url = `${URL}/${id}`;
     fetch(url, { method: "DELETE" })
-        .then(() => {
+        .then((response) => {
+            console.log(response)
             alert("Greeting deleted Successfully");
+            location.reload();
+            return response.json();
+        }).then((greetingData) => {
+            console.log(greetingData);
+
+        }).catch((err) => {
+            console.log(err);
+            alert("Error occcured while deleting greeting try again..!!");
         })
-        .catch(() => alert("Error occcured while deleting greeting try again..!!"));
-};
+}
 
 
 /**
@@ -206,29 +207,16 @@ edit = (firstName, lastName, id) => {
                 message: lastName,
             }),
         })
-        // .then((response) => {
-        //     response.json();
-        //     if (response.ok) {
-        //         alert("successfully edited");
-        //     }
-        // })
-        // .catch((err) => {
-        //     return err;
-        // });
-
-
-    .then((response) => {
-        console.log(response)
-        return response.json();
-    }).then((greetingData) => {
-        console.log(greetingData);
-        if (response.ok) {
-            alert("successfully edited");
-        }
-
-    }).catch((err) => {
-        console.log(err);
-    })
+        .then((response) => {
+            response.json();
+            if (response.ok) {
+                alert("successfully edited");
+                location.reload();
+            }
+        })
+        .catch((err) => {
+            return err;
+        });
     closeEditForm();
 };
 
