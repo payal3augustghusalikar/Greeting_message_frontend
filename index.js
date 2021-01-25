@@ -40,66 +40,6 @@ getData = () => {
 //to load the all grettings
 addEventListener("click", getData());
 
-// function addGreeting(greeting) {
-//     greeting.preventDefault();
-//     let firstName = document.querySelector(".firstName").value;
-//     let lastName = document.querySelector(".lastName").value;
-//     let form = document.querySelector(".formPopup");
-//     let firstNameError = document.querySelector(".firstNameError");
-//     let lastNameError = document.querySelector(".lastNameError");
-
-//     if (!validFormInputs(firstName) || !validFormInputs(lastName)) {
-//         form.addEventListener("submit", (e) => {
-//             firstNameError.innerHTML = " ";
-//             lastNameError.innerHTML = " ";
-//             e.preventDefault();
-//             let firstNameMessage = [];
-//             let lastNameMessage = [];
-//             if (firstName.length < 3) {
-//                 document.querySelector(".firstNameError").style.cssText +=
-//                     "color: #d02525";
-//                 firstNameMessage.push("first name should be greater than 3 char");
-//             }
-//             if (!validFormInputs(firstName)) {
-//                 document.querySelector(".firstNameError").style.cssText +=
-//                     "color: #d02525";
-//                 firstNameMessage.push("first name should not contain number");
-//             }
-//             if (lastName.length < 3) {
-//                 lastNameMessage.push("last name should be greater than 3 char");
-//             }
-//             if (!validFormInputs(lastName)) {
-//                 lastNameMessage.push("last name should not contain number");
-//             }
-//             if (firstNameMessage.length > 0)
-//                 firstNameError.innerHTML = firstNameMessage.join(", ");
-//             if (lastNameMessage.length > 0)
-//                 lastNameError.innerHTML = lastNameMessage.join(", ");
-//         })
-
-//     } else {
-//         fetch(URL, {
-//                 method: "POST",
-//                 headers: {
-//                     Accept: "application/json, text/plain, */*",
-//                     "Content-type": "application/json",
-//                 },
-//                 body: JSON.stringify({
-//                     name: firstName,
-//                     message: lastName,
-//                 }),
-//             })
-//             .then((response) => {
-//                 response.json();
-//                 alert("Greeting successfully added");
-//                 getData()
-//             })
-//             .catch((err) => {
-//                 return err;
-//             });
-//         closeForm();
-//     }
-// }
 
 /**
  * vallidate the user input and calls add function
@@ -184,39 +124,7 @@ function closeForm() {
 //use to add the data on submit
 document.getElementById("addpost").addEventListener("submit", addGreeting);
 
-// // working codeof delete greting withoout shoeing popup
-// deleteGreeting = (id) => {
-//     if (id == "undefined") {
-//         alert("Id cant be undefined");
-//         closeDeletePopup();
-//         getData();
-//     } else {
-//         fetch(`${URL}/${id}`, { method: "DELETE" })
-//             .then(() => {
-//                 alert("Greeting deleted Successfully");
-//                 closeDeletePopup();
-//                 getData();
-//             })
-//             .catch(() =>
-//                 alert("Error occcured while updating greeting try again..!!")
-//             );
-//         document.querySelector(".deleteBoxConformation").style.display = "none";
-//     }
-// };
 
-// /**
-//  * delete the popup
-//  * @param{id}
-//  */
-// deletePopup = (id) => {
-//     document.querySelector(".deleteBoxConformation").style.display = "block";
-//     document
-//         .getElementById("deletePost")
-//         .addEventListener("submit", deleteGreeting(id));
-//     document
-//         .querySelector("delete")
-//         .addEventListener("delete", deleteGreeting(id));
-// };
 
 deleteGreetingPopup = (id) => {
     document.querySelector(".delete-form-popup").style.display = "flex";
@@ -236,54 +144,15 @@ document.getElementById("closeDeleteGreetingForm").addEventListener('click', () 
 })
 
 
-// deletePopup = (id) => {
-//     document.querySelector(".deleteBoxConformation").style.display = "flex";
-//     document
-//         .getElementById("deleteRecord")
-//         .addEventListener("click", deleteGreeting(id));
-//     // document
-//     //     .querySelector("delete")
-//     //     .addEventListener("delete", deleteGreeting(id));
-// };
-
 deleteGreeting = (greetingId) => {
     let id = greetingId;
     url = `${URL}/${id}`;
     fetch(url, { method: "DELETE" })
         .then(() => {
             alert("Greeting deleted Successfully");
-            closeDeletePopup();
-
         })
         .catch(() => alert("Error occcured while deleting greeting try again..!!"));
 };
-
-// deleteGreeting = (id) => {
-//     if (id == "undefined") {
-//         alert("Id cant be undefined");
-//         closeDeletePopup();
-//         getData();
-//     } else {
-//         fetch(`${URL}/${id}`, { method: "DELETE" })
-//             .then(() => {
-//                 alert("Greeting deleted Successfully");
-//                 closeDeletePopup();
-//                 getData();
-//             })
-//             .catch(() =>
-//                 alert("Error occcured while updating greeting try again..!!")
-//             );
-//         document.querySelector(".deleteBoxConformation").style.display = "none";
-//     }
-// };
-
-//use to close the popup
-closeDeletePopup = () => {
-    document.querySelector("delete-form-popup").style.display = "none";
-};
-
-
-
 
 
 /**
