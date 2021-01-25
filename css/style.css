@@ -30,12 +30,12 @@
 .header-bar {
     z-index: 99;
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     display: inline-flex;
     background-color: #f3f1f1;
     box-shadow: 2px 2px 5px rgba(119, 118, 118, 0.6);
-    padding-bottom: 10px;
 }
 
 .header-bar #a {
@@ -94,7 +94,7 @@
 .signup {
     position: absolute;
     left: 450px;
-    top: 7px;
+    top: 5px;
     background-color: blue;
     color: rgb(5, 224, 253);
     border-radius: 25px;
@@ -205,13 +205,13 @@ layout h2 {
 }
 
 .user {
-    background-color: white;
+    background-color: rgb(243, 239, 239);
     display: inline-block;
     height: 150px;
     width: 200px;
     padding: 10px 10px 10px 10px;
     margin: 12px 20px 19px 14px;
-    box-shadow: 5px 10px 10px 10px rgb(211, 209, 209);
+    box-shadow: 5px 5px 5px 5px rgb(204, 201, 201);
     font-size: 12px;
 }
 
@@ -235,16 +235,6 @@ layout h2 {
     display: none;
 }
 
-.modal-content {
-    width: 250px;
-    height: 200px;
-    background-color: white;
-    border-radius: 4px;
-    text-align: center;
-    padding: 40px;
-    position: relative;
-}
-
 .button {
     display: inline;
     margin-top: 20px;
@@ -259,7 +249,7 @@ layout h2 {
 
 label {
     padding-top: 20%;
-    padding-right: 5px;
+    padding-right: 10px;
     margin: 0 auto;
     text-align: center;
 }
@@ -275,8 +265,7 @@ label {
 
 /* input form popup lose */
 
-
-/* .formPopup,
+.formPopup,
 .formPopups {
     display: none;
     position: fixed;
@@ -285,8 +274,11 @@ label {
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
-} */
+    text-align: center;
+}
 
+
+/* 
 .formPopup {
     display: none;
     position: fixed;
@@ -295,16 +287,16 @@ label {
     border: 3px solid #999999;
     z-index: 9;
     text-align: center;
-}
+} */
 
 .formContainer {
-    max-width: 400px;
+    max-width: 200px;
     padding: 20px;
     background-color: #fff;
 }
 
 .formContainer input {
-    width: 80%;
+    width: 90%;
     padding: 15px;
     margin: 5px 0 20px 0;
     border: none;
@@ -335,6 +327,54 @@ label {
     background-color: #f82424;
     opacity: 1;
 }
+
+.formContainer .btn:hover,
+.openButton:hover,
+.openAllButton:hover {
+    opacity: 0.5;
+}
+
+.formPopup,
+.formPopups {
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 5%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 9;
+}
+
+.formContainer {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.formContainer input[type="text"]:focus,
+.formContainer input[type="text"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* 
+.formContainer .btn {
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+} */
+
+
+/* 
+.formContainer .cancel {
+    background-color: #cc000036;
+} */
 
 .formContainer .btn:hover,
 .openButton:hover,
@@ -435,6 +475,17 @@ user .deleteOnCards {
     top: 35%;
     left: 0;
     right: 0;
+}
+
+.modal-content {
+    display: none;
+    width: 250px;
+    height: 200px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 40px;
+    position: relative;
 } */
 
 
@@ -456,3 +507,24 @@ user .deleteOnCards {
     padding: 20px;
     background-color: #fff;
 }
+
+
+/* body {
+    margin: 0;
+    padding: 0;
+}
+
+body:before {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10pox);
+} */
