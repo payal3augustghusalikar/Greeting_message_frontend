@@ -7,10 +7,8 @@ const URL = "http://localhost:2000/greetings";
  * @param:{string}name
  */
 function validFormInputs(name) {
-    return /^[a-zA-Z]{3,}$/.test(name);
+    return /^[A-Z]{1}[A-za-z]{2,}$/.test(name);
 }
-
-
 
 /**
  *  function to fetch all greetings
@@ -55,7 +53,7 @@ addEventListener("click", getData());
  * @param {*} greeting
  */
 function addGreeting() {
-    // greeting.preventDefault();
+    //greeting.preventDefault();
     let firstName = document.querySelector(".firstName").value;
     let lastName = document.querySelector(".lastName").value;
     let form = document.querySelector(".formPopup");
@@ -86,7 +84,6 @@ function addGreeting() {
             if (lastNameMessage.length > 0)
                 lastNameError.innerHTML = lastNameMessage.join(", ");
         });
-        getData();
     } else add(firstName, lastName);
 }
 
@@ -146,14 +143,9 @@ deleteGreeting = (greetingId) => {
     let id = greetingId;
     url = `${URL}/${id}`;
     fetch(url, { method: "DELETE" })
-        .then((response) => {
-            console.log(response)
-            alert("Greeting deleted Successfully");
+        .then(() => {
             location.reload();
-            return response.json();
-        }).then((greetingData) => {
-            console.log(greetingData);
-
+            alert("Greeting deleted Successfully");
         }).catch((err) => {
             console.log(err);
             alert("Error occcured while deleting greeting try again..!!");
@@ -283,14 +275,21 @@ editGreeting = (greetingId) => {
                 'Content-Type': 'application/json'
             },
             method: "PUT",
-            body: JSON.stringify({ name: name, message: message }),
+            body: JSON.stringify({
+                name: name,
+                message: message
+            }),
         }).then((response) => {
-            console.log(response)
+            //console.log(response)
             return response.json();
         }).then((greetingData) => {
-            console.log(greetingData);
+            // console.log(greetingData);
+            location.reload();
+            alert("Greeting updated Successfully");
+
         }).catch((err) => {
             console.log(err);
+            alert("Error occcured while updating greeting try again..!!");
         })
     })
 }

@@ -45,69 +45,25 @@
         </nav>
     </div>
     </div>
-    <div class="greetPopup">
-        <div class="formPopup">
-            <form class="formContainer" id="addpost" autocomplete="off">
-                <h2> Add Greeting </h2>
-                <label for="firstName">
+    <!-- <div class="greetPopup"> -->
+    <div class="formPopup">
+        <form class="formContainer" id="addpost" autocomplete="off">
+            <h2> Add Greeting </h2>
+            <label for="firstName">
                     Name
                 </label>
-                <div class="firstNameError"></div>
-                <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
-                <label for="lastName">
+            <div class="firstNameError"></div>
+            <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
+            <label for="lastName">
                     Message
                 </label>
-                <div class="lastNameError"></div>
-                <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
-                <button type="submit" class="btn">submit</button>
-                <button class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-        </div>
-    </div>
-
-
-    <!-- <div class="greetsPopup">
-        <div class="formPopups">
-            <form class="formContainer" id="editpost" autocomplete="off">
-                <h2>Edit Details </h2>
-                <label for="firstName">
-                    First Name
-                </label>
-                <div class="firstNameEror"></div>
-                <input type="text" class="firstNameEdit" value="${name}" placeholder="Your first name" name="firstName" required>
-                <label for="lastName">
-                    Last Name
-                </label>
-                <div class="lastNameEror"></div>
-                <input type="text" class="lastNameEdit" placeholder="Your last name" name="lastName" required>
-                <button type="submit" id="1" class="btn">submit</button>
-                <button class="btn cancel" onclick="closeEditForm()">Close</button>
-            </form>
-        </div>
-    </div>
- -->
-
-    <!-- <div class="greetsPopup"> -->
-    <!-- <div class="formPopups">
-        <form class="formContainer" id="editpost" autocomplete="off">
-            <h2>Edit Details </h2>
-            <label for="firstName">
-                    First Name
-                </label>
-            <div class="firstNameEror"></div>
-            <input type="text" class="firstNameEdit" placeholder="Your first name" name="firstName" required autocomplete="off">
-            <label for="lastName">
-                     Last Name
-                </label>
-            <div class="lastNameEror"></div>
-            <input type="text" class="lastNameEdit" placeholder="Your last name" name="lastName" required>
-            <button type="submit" class="btn" onclick="editGreetings(id)">submit</button>
-            <button class="btn cancel" onclick="closeEditForm()">Close</button>
+            <div class="lastNameError"></div>
+            <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
+            <button type="submit" class="btn">submit</button>
+            <button class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-    </div> -->
+    </div>
     <!-- </div> -->
-
-
 
     <layout>
         <div>
@@ -122,54 +78,23 @@
         <form class="formContainer">
             <h3>Delete Greeting</h3>
             <h4>do you want to delete it ?</h4>
-
             <button type="submit" id="deleteRecord" class="btn">Yes</button>
             <button type="button" class="btn cancel" id="closeDeleteGreetingForm">No</button>
         </form>
     </div>
     </div>
 
-
-    <!-- <div class="update-form-popup" id="updateGreetingForm" style="display:none">
-        <form id="updateGreeting" class="formContainer">
-            <h3>Update Greeting</h3>
-            <table>
-                <tr>
-                     <td> <input type="text" placeholder="Enter name" id="updateName" required autocomplete="off"></td> 
-                    <td> <input type="text" placeholder="Enter name" id="updateName" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" autocomplete="off"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" placeholder="Enter  message" id="updateMsg" required autocomplete="off"></td>
-                    <td><input type="text" placeholder="Enter  message" id="updateMsg" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" autocomplete="off"></td>
-                </tr>
-                <tr>
-                    <td> <button type="submit" id="updateRecord" class="btn">Save</button></td>
-                    <td><button type="button" id="closeUpdateGreetingForm" class="btn">Close</button></td>
-                </tr>
-            </table>
-        </form>
-        </div> -->
-
-
-
     <div class="update-form-popup" id="updateGreetingForm" style="display:none">
         <form id="updateGreeting" class="formContainer">
             <h3>Update Greeting</h3>
-            <label for="firstName">
-                Name
-            </label>
-            <!-- <td> <input type="text" placeholder="Enter name" id="updateName" required autocomplete="off"></td>  -->
+            <label for="firstName">Name</label>
             <input type="text" placeholder="Enter name" id="updateName" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="name" autocomplete="off">
-            <!-- <td><input type="text" placeholder="Enter  message" id="updateMsg" required autocomplete="off"></td> -->
-            <label for="lastName">
-                Message
-            </label>
+            <label for="lastName">Message</label>
             <input type="text" placeholder="Enter  message" id="updateMsg" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="message" autocomplete="off">
             <button type="submit" id="updateRecord" class="btn">Save</button>
             <button type="button" class="btn cancel" id="closeUpdateGreetingForm">Close</button>
         </form>
     </div>
-
     <div class="modal-content"></div>
     <script type="text/javascript" src="index.js">
     </script>
