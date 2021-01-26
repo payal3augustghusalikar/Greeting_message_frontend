@@ -1,3 +1,121 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Greeting Message App</title>
+</head>
+
+<body>
+    <div class="modal"> </div>
+    <div class="header-bar">
+        <h3>Greetings App</h3>
+        <ul>
+            <li><img id="a" src="./assets/notification_icon3.png"></li>
+            <li><img id="b" src="./assets/mail_icon3.png"></li>
+            <li><img id="c" src="./assets/support_icon1.png">Support</li>
+            <li><img id="d" src="./assets/tool_icon3.png"> tools
+                <select name="Tools"> 
+                <optgroup label="Tools">
+                    <option value="Tool">Tool</option>
+                    <option value="tool">tool2</option>
+                    <option value="tool">tool3</option>
+                </optgroup>
+                </label>
+                <optgroup label="tool">
+                    <option value="tool">tool4</option>
+                    <option value="tool">tool5</option>
+                </optgroup>
+                </select>
+                </i>
+            </li>
+            <li class="sign-in">SignIn</li>
+            <li class="sign-up">SIGNUP</li>
+        </ul>
+    </div>
+    </div>
+    <div class="sidebar">
+        <nav>
+            <div>
+                <a><img src="assets/list_icon3.png" class="openAllButton" onclick="getData()"> list</a>
+                <a><img src="assets/add_icon3.png" class="openButton" onclick="openForm()"> add </a>
+                <a><img src="assets/edit_icon3.png"> edit </a>
+                <a><img src="assets/delete_icon3.png"> delete </a>
+            </div>
+        </nav>
+    </div>
+    </div>
+    <div class="greetPopup">
+        <div class="formPopup">
+            <form class="formContainer" id="addpost" autocomplete="off">
+                <h2> Add Greeting </h2>
+                <label for="firstName">
+                    Name
+                </label>
+                <div class="firstNameError"></div>
+                <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
+                <label for="lastName">
+                    Message
+                </label>
+                <div class="lastNameError"></div>
+                <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
+                <button type="submit" class="btn">submit</button>
+                <button class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <layout>
+        <div>
+            <h2>Basic Panels Layout</h2>
+        </div>
+        <div class="cardgreeting">
+            <div id="app"></div>
+        </div>
+        </div>
+    </layout>
+    <div class="delete-form-popup" id="deleteGreetingForm" style="display:none">
+        <form class="formContainer">
+            <h3>Delete Greeting</h3>
+            <h4>do you want to delete it ?</h4>
+            <button type="submit" id="deleteRecord" class="btn">Yes</button>
+            <button type="button" class="btn cancel" id="closeDeleteGreetingForm">No</button>
+        </form>
+    </div>
+    </div>
+
+    <div class="update-form-popup" id="updateGreetingForm" style="display:none">
+        <form id="updateGreeting" class="formContainer">
+            <h3>Update Greeting</h3>
+            <label for="firstName">Name</label>
+            <input type="text" placeholder="Enter name" id="updateName" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="name" autocomplete="off">
+            <label for="lastName">Message</label>
+            <input type="text" placeholder="Enter  message" id="updateMsg" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="message" autocomplete="off">
+            <button type="submit" id="updateRecord" class="btn">Save</button>
+            <button type="button" class="btn cancel" id="closeUpdateGreetingForm">Close</button>
+        </form>
+    </div>
+    <div class="modal-content"></div>
+    <script type="text/javascript" src="index.js">
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 
@@ -45,25 +163,7 @@
         </nav>
     </div>
     </div>
-    <!-- <div class="greetPopup"> -->
-    <div class="formPopup">
-        <form class="formContainer" id="addpost" autocomplete="off">
-            <h2> Add Greeting </h2>
-            <label for="firstName">
-                    Name
-                </label>
-            <div class="firstNameError"></div>
-            <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
-            <label for="lastName">
-                    Message
-                </label>
-            <div class="lastNameError"></div>
-            <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
-            <button type="submit" class="btn">submit</button>
-            <button class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-    <!-- </div> -->
+
 
     <layout>
         <div>
@@ -74,12 +174,38 @@
         </div>
         </div>
     </layout>
+
+
+
+
     <div class="delete-form-popup" id="deleteGreetingForm" style="display:none">
         <form class="formContainer">
             <h3>Delete Greeting</h3>
             <h4>do you want to delete it ?</h4>
             <button type="submit" id="deleteRecord" class="btn">Yes</button>
             <button type="button" class="btn cancel" id="closeDeleteGreetingForm">No</button>
+        </form>
+    </div>
+    </div>
+
+
+
+    <!-- <div class="greetPopup"> -->
+    <div class="formPopup" style="display:none">
+        <form class="formContainer" id="addpost" autocomplete="off">
+            <h2> Add Greeting </h2>
+            <label for="firstName">
+                        Name
+                    </label>
+            <div class="firstNameError"></div>
+            <input type="text" class="firstName" placeholder="Your first name" name="firstName" required>
+            <label for="lastName">
+                        Message
+                    </label>
+            <div class="lastNameError"></div>
+            <input type="text" class="lastName" placeholder="Your last name" name="lastName" required>
+            <button type="submit" class="btn">submit</button>
+            <button class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
     </div>
