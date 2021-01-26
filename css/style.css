@@ -390,11 +390,17 @@ label {
 .formPopups {
     display: none;
     position: fixed;
-    left: 45%;
-    top: 5%;
+    left: 50%;
+    top: 20%;
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
     text-align: center;
 }
 
@@ -436,7 +442,8 @@ label {
     opacity: 0.5;
 }
 
-.formPopup,
+
+/* .formPopup,
 .formPopups {
     display: none;
     position: fixed;
@@ -445,7 +452,7 @@ label {
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
-}
+} */
 
 .formContainer {
     max-width: 300px;
@@ -494,7 +501,8 @@ user .deleteOnCards {
     bottom: 25%;
 }
 
-.formPopup,
+
+/* .formPopup,
 .formPopups {
     display: none;
     position: fixed;
@@ -503,8 +511,7 @@ user .deleteOnCards {
     transform: translate(-50%, 5%);
     border: 3px solid #999999;
     z-index: 9;
-    background-color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 .formContainer {
     max-width: 400px;
@@ -517,7 +524,7 @@ user .deleteOnCards {
 
 .delete-form-popup {
     width: 100%;
-    height: 200%;
+    height: 130%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     top: 10%;
@@ -558,4 +565,30 @@ user .deleteOnCards {
 
 .formContainer1 .btn:hover {
     opacity: 0.5;
+}
+
+
+/* .greetsPopup {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 10%;
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
+} */
+
+.update-form-popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-align: center;
 }

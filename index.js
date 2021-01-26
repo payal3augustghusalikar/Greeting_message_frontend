@@ -1,5 +1,17 @@
 const URL = "http://localhost:2000/greetings";
 
+
+/**
+ * @description: validate the name from form
+ * @returns: true or false
+ * @param:{string}name
+ */
+function validFormInputs(name) {
+    return /^[a-zA-Z]{3,}$/.test(name);
+}
+
+
+
 /**
  *  function to fetch all greetings
  */
@@ -21,9 +33,7 @@ getData = () => {
           <p>${greeting.name}</p>
           <p>${greeting.message}</p>
           <pre>${greeting.createdAt.substring(0, 10)}</pre>   
-          <div class='editOnCards'><img src="./assets/edit_icon3.png" onclick="openFormToEdit('${
-            greeting._id
-          }')"></div>
+          <div class='editOnCards'><img src="./assets/edit_icon3.png" onclick="editGreetingPopup('${greeting._id}')"></div>
           <div class='deleteOnCards'><img src="./assets/delete_icon3.png" onclick="deleteGreetingPopup('${
             greeting._id
           }')"></div>
@@ -132,7 +142,6 @@ document.getElementById("closeDeleteGreetingForm").addEventListener('click', () 
     document.querySelector('.delete-form-popup').style.display = 'none';
 })
 
-
 deleteGreeting = (greetingId) => {
     let id = greetingId;
     url = `${URL}/${id}`;
@@ -152,95 +161,136 @@ deleteGreeting = (greetingId) => {
 }
 
 
-/**
- * @description: edit the existing greeting in the api using id
- * @param{id}
- */
-function editGreetings(id) {
-    let firstName = document.querySelector(".firstNameEdit").value;
-    let lastName = document.querySelector(".lastNameEdit").value;
-    let form = document.querySelector(".formPopups");
-    let firstNameError = document.querySelector(".firstNameEror");
-    let lastNameError = document.querySelector(".lastNameEror");
-    if (!validFormInputs(firstName) || !validFormInputs(lastName)) {
-        form.addEventListener("submit", (e) => {
-            firstNameError.innerHTML = " ";
-            lastNameError.innerHTML = " ";
-            e.preventDefault();
-            let firstNameMessage = [];
-            let lastNameMessage = [];
-            if (firstName.length < 3) {
-                firstNameMessage.push("first name should be greater than 3 char");
-            }
-            if (!validFormInputs(firstName)) {
-                firstNameMessage.push("first name should not contain number");
-            }
-            if (lastName.length < 3) {
-                lastNameMessage.push("last name should be greater than 3 char");
-            }
-            if (!validFormInputs(lastName)) {
-                lastNameMessage.push("last name should not contain number");
-            }
-            if (firstNameMessage.length > 0)
-                firstNameError.innerHTML = firstNameMessage.join(", ");
-            if (lastNameMessage.length > 0)
-                lastNameError.innerHTML = lastNameMessage.join(", ");
-        });
-    } else {
-        edit(firstName, lastName, id);
-    }
+// /**
+//  * @description: edit the existing greeting in the api using id
+//  * @param{id}
+//  */
+// function editGreetings(id) {
+//     let firstName = document.querySelector(".firstNameEdit").value;
+//     let lastName = document.querySelector(".lastNameEdit").value;
+//     let form = document.querySelector(".formPopups");
+//     let firstNameError = document.querySelector(".firstNameEror");
+//     let lastNameError = document.querySelector(".lastNameEror");
+//     if (!validFormInputs(firstName) || !validFormInputs(lastName)) {
+//         form.addEventListener("submit", (e) => {
+//             firstNameError.innerHTML = " ";
+//             lastNameError.innerHTML = " ";
+//             e.preventDefault();
+//             let firstNameMessage = [];
+//             let lastNameMessage = [];
+//             if (firstName.length < 3) {
+//                 firstNameMessage.push("first name should be greater than 3 char");
+//             }
+//             if (!validFormInputs(firstName)) {
+//                 firstNameMessage.push("first name should not contain number");
+//             }
+//             if (lastName.length < 3) {
+//                 lastNameMessage.push("last name should be greater than 3 char");
+//             }
+//             if (!validFormInputs(lastName)) {
+//                 lastNameMessage.push("last name should not contain number");
+//             }
+//             if (firstNameMessage.length > 0)
+//                 firstNameError.innerHTML = firstNameMessage.join(", ");
+//             if (lastNameMessage.length > 0)
+//                 lastNameError.innerHTML = lastNameMessage.join(", ");
+//         });
+//     } else {
+//         edit(firstName, lastName, id);
+//     }
+// }
+
+
+
+// /**
+//  * edit the greeting
+//  * @param{firstName, lastName, id} takes from editGreetings
+//  */
+// edit = (firstName, lastName, id) => {
+//     fetch(`${URL}/${id}`, {
+//         method: "PUT",
+//         headers: {
+//             Accept: "application/json",
+//             "Content-type": "application/json",
+//         },
+//         body: JSON.stringify({
+//             name: firstName,
+//             message: lastName,
+//         }),
+
+//     }).then((response) => {
+//         console.log(response)
+//         alert("Greeting updated Successfully");
+//         return response.json();
+//     }).then((greetingData) => {
+//         console.log(greetingData);
+//     }).catch((err) => {
+//         alert("Error occcured while updating greeting try again..!!");
+//         console.log(err);
+//     })
+//     location.reload();
+// }
+
+
+
+
+// /**
+//  * @description: use to display the edit form
+//  * @param:{object}element
+//  */
+// function openFormToEdit(id) {
+//     document.querySelector(".formPopups").style.display = "flex";
+//     document
+//         .getElementById("editpost")
+//         .addEventListener("click", editGreetings(id));
+// }
+
+// //use to hide the edit form
+// function closeEditForm() {
+//     document.querySelector(".formPopups").style.display = "none";
+// }
+
+
+
+
+
+
+
+
+
+
+document.getElementById("closeUpdateGreetingForm").addEventListener('click', () => {
+    document.querySelector('.update-form-popup').style.display = 'none';
+})
+
+editGreetingPopup = (greetingId) => {
+    document.querySelector('.update-form-popup').style.display = 'flex';
+    console.log(document.getElementById("updateRecord"));
+    document.getElementById("updateRecord").addEventListener('click', () => {
+        editGreeting(greetingId);
+    });
 }
 
-/**
- * edit the greeting
- * @param{firstName, lastName, id} takes from editGreetings
- */
-edit = (firstName, lastName, id) => {
-    fetch(`${URL}/${id}`, {
-            method: "PUT",
+editGreeting = (greetingId) => {
+    document.getElementById('updateGreeting').addEventListener('submit', (e) => {
+        var name = document.getElementById('updateName').value;
+        var message = document.getElementById('updateMsg').value;
+        let id = greetingId;
+        url = `${URL}/${id}`;
+        fetch(url, {
             headers: {
-                Accept: "application/json",
-                "Content-type": "application/json",
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                name: firstName,
-                message: lastName,
-            }),
+            method: "PUT",
+            body: JSON.stringify({ name: name, message: message }),
+        }).then((response) => {
+            console.log(response)
+            return response.json();
+        }).then((greetingData) => {
+            console.log(greetingData);
+        }).catch((err) => {
+            console.log(err);
         })
-        .then((response) => {
-            response.json();
-            if (response.ok) {
-                alert("successfully edited");
-                location.reload();
-            }
-        })
-        .catch((err) => {
-            return err;
-        });
-    closeEditForm();
-};
-
-/**
- * @description: validate the name from form
- * @returns: true or false
- * @param:{string}name
- */
-function validFormInputs(name) {
-    return /^[a-zA-Z]{3,}$/.test(name);
-}
-
-/**
- * @description: use to display the edit form
- * @param:{object}element
- */
-function openFormToEdit(element) {
-    document.querySelector(".formPopups").style.display = "block";
-    document
-        .getElementById("editpost")
-        .addEventListener("click", editGreetings(element.id));
-}
-
-//use to hide the edit form
-function closeEditForm() {
-    document.querySelector(".formPopups").style.display = "none";
+    })
 }
