@@ -47,7 +47,6 @@
     </div>
     </div>
 
-
     <layout>
         <div>
             <h2>Basic Panels Layout</h2>
@@ -69,7 +68,6 @@
     </div>
     </div>
 
-    <!-- <div class="greetPopup"> -->
     <div class="formPopUp" style="display:none">
         <form class="formContainer" id="addPost" autocomplete="off">
             <h2> Add Greeting </h2>
@@ -87,15 +85,16 @@
             <button class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>
-    <!-- </div> -->
 
     <div class="update-form-popup" id="updateGreetingForm" style="display:none">
         <form id="updateGreeting" class="formContainer">
             <h3>Update Greeting</h3>
             <label for="firstName">Name</label>
-            <input type="text" placeholder="Enter name" id="updateName" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="name" autocomplete="off">
+            <div class="firstNameError"></div>
+            <input type="text" placeholder="Enter name" id="updateName" name="firstName" required autocomplete="off">
             <label for="lastName">Message</label>
-            <input type="text" placeholder="Enter  message" id="updateMsg" required pattern="[A-Z]{1}[a-zA-Z ]{2,}" name="message" autocomplete="off">
+            <div class="lastNameError"></div>
+            <input type="text" placeholder="Enter  message" id="updateMsg" name="lastName" required autocomplete="off">
             <button type="submit" id="updateRecord" class="btn">Save</button>
             <button type="button" class="btn cancel" id="closeUpdateGreetingForm">Close</button>
         </form>

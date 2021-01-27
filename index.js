@@ -63,7 +63,7 @@ addEventListener("click", getData());
  * @param {*} greeting
  */
 function addGreeting() {
-    greeting.preventDefault();
+    // greeting.preventDefault();
     let firstName = document.querySelector(".firstName").value;
     let lastName = document.querySelector(".lastName").value;
     let form = document.querySelector(".formPopUp");
@@ -114,12 +114,13 @@ add = (firstName, lastName) => {
             }),
         })
         .then((response) => {
-            response.json();
             alert("Greeting successfully added");
+            response.json();
 
         })
         .catch((err) => {
             return err;
+
         });
     closeForm();
     location.reload();
@@ -166,11 +167,13 @@ deleteGreeting = (greetingId) => {
     url = `${URL}/${id}`;
     fetch(url, { method: "DELETE" })
         .then(() => {
-            location.reload();
+
             alert("Greeting deleted Successfully");
+            location.reload();
         }).catch((err) => {
-            console.log(err);
+
             alert("Error occcured while deleting greeting try again..!!");
+            console.log(err);
         })
 }
 
@@ -217,8 +220,9 @@ editGreeting = (greetingId) => {
                 }),
             })
             .then((response) => {
+                alert("Greeting updated Successfully");
                 response.json();
-                alert("Greeting successfully updated");
+
                 location.reload();
             })
             .catch((err) => {

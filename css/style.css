@@ -34,10 +34,18 @@
 
 .header-bar #b {
     height: 22px;
-    padding-top: 15px;
+    height: 23px;
+    padding-top: 8px;
+}
+
+.header-bar #c {
+    height: 20px;
+    width: 27px;
 }
 
 .header-bar h3 {
+    margin-left: 200px;
+    display: -ms-inline-flexbox;
     margin-left: 200px;
     display: -ms-inline-flexbox;
 }
@@ -71,9 +79,7 @@
 .sign-in {
     color: rgb(10, 176, 241);
     position: absolute;
-    padding-top: 8px;
-    left: 355px;
-    color: rgb(10, 176, 241);
+    left: 345px;
     position: absolute;
     bottom: 2px;
     top: 8px;
@@ -81,52 +87,14 @@
 
 .sign-up {
     position: absolute;
-    left: 420px;
+    left: 410px;
     font-size: 13px;
     bottom: 0px;
+    position: absolute;
+    padding-bottom: 3px;
     background-color: blue;
     color: rgb(5, 224, 253);
     border-radius: 25px;
-}
-
-.signup:hover {
-    color: rgb(21, 199, 140);
-    background-color: #251155;
-}
-
-.header-bar h3 {
-    margin-left: 200px;
-    display: -ms-inline-flexbox;
-}
-
-.header-bar ul {
-    margin-top: 23px;
-    position: absolute;
-    right: 150px;
-}
-
-.header-bar li {
-    cursor: pointer;
-    padding: 6px;
-    display: inline;
-}
-
-.header-bar li img {
-    height: 20px;
-    width: 23px;
-}
-
-.header-bar li img {
-    height: 20px;
-    width: 23px;
-}
-
-.signin {
-    color: rgb(10, 176, 241);
-    position: absolute;
-    bottom: 0;
-    top: 10;
-    left: 200px;
 }
 
 .signup:hover {
@@ -143,51 +111,8 @@
     }
 }
 
-
-/* header bar starts */
-
-.header-bar {
-    z-index: 99;
-    position: fixed;
-    height: 60px;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: inline-flex;
-    background-color: #f3f1f1;
-    box-shadow: 2px 2px 5px rgba(119, 118, 118, 0.6);
-}
-
-.header-bar #a {
-    display: -ms-inline-flexbox;
-    /* padding-bottom: 4px; */
-}
-
-.header-bar #d {
-    display: -ms-inline-flexbox;
-    /* padding-bottom: 4px; */
-    padding-top: 4px;
-}
-
 .header-bar select {
     width: 50px;
-}
-
-.header-bar #b {
-    height: 23px;
-    /* padding-bottom: 3px; */
-    padding-top: 8px;
-}
-
-.header-bar #c {
-    height: 20px;
-    width: 27px;
-    /* padding-bottom: 4px; */
-}
-
-.header-bar h3 {
-    margin-left: 200px;
-    display: -ms-inline-flexbox;
 }
 
 .header-bar ul {
@@ -211,15 +136,6 @@
     color: rgb(10, 176, 241);
     position: absolute;
     padding-bottom: 4px;
-}
-
-.signup {
-    position: absolute;
-    left: 450px;
-    padding-bottom: 3px;
-    background-color: blue;
-    color: rgb(5, 224, 253);
-    border-radius: 25px;
 }
 
 .signup:hover {
@@ -258,12 +174,6 @@ body {
 
 .sidebar a:hover {
     color: #152ae9;
-}
-
-.main {
-    margin-left: 160px;
-    /* Same as the width of the sidenav */
-    padding: 0px 10px;
 }
 
 @media screen and (max-height: 450px) {
@@ -373,14 +283,6 @@ label {
     text-align: center;
 }
 
-.close {
-    position: absolute;
-    top: 0;
-    right: 14px;
-    font-size: 42px;
-    transform: rotate(45deg);
-}
-
 
 /* input form popup lose */
 
@@ -404,7 +306,7 @@ label {
     background-color: #04830e;
     color: rgb(162, 237, 250);
     cursor: pointer;
-    width: 50%;
+    width: 30%;
     margin-bottom: 15px;
     opacity: 0.8;
     padding-right: 20px;
@@ -422,45 +324,11 @@ label {
     opacity: 0.5;
 }
 
-
-/* .formPopup {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 00;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    text-align: center;
-} */
-
-.formPopup,
-.formPopups {
-    width: 100%;
-    height: 130%;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: 10%;
-    display: flex;
-    padding-top: 10px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    text-align: center;
-}
-
 .formContainer {
     max-width: 300px;
     padding: 20px;
     background-color: #fff;
-}
-
-.formContainer input[type="text"]:focus,
-.formContainer input[type="text"]:focus {
-    background-color: rgb(247, 242, 242);
-    outline: none;
+    border-radius: 10px;
 }
 
 .firstNameError,
@@ -534,37 +402,6 @@ user .deleteOnCards {
     justify-content: center;
     border-radius: 8px;
     text-align: center;
-}
-
-.formContainer1 {
-    max-width: 300px;
-    padding-top: 20px;
-    background-color: #fff;
-    justify-self: right;
-    justify-content: center;
-    justify-items: left
-}
-
-.formContainer1 .btn {
-    border: none;
-    background-color: #04830e;
-    cursor: pointer;
-    width: 50%;
-    margin-bottom: 15px;
-    opacity: 0.8;
-    padding-right: 20px;
-    border-radius: 20px;
-    text-align: center;
-}
-
-.formContainer1 .cancel {
-    background-color: #f82424;
-    opacity: 1;
-    justify-items: center;
-}
-
-.formContainer1 .btn:hover {
-    opacity: 0.5;
 }
 
 .update-form-popup {
